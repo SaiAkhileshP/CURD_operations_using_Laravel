@@ -1,0 +1,123 @@
+
+.main-heading{
+    text-align: center;
+}
+body{
+    display: flex;
+    justify-content: center;
+    height: 100%;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.container{
+    width: 50%;
+}
+.addNew-btn{
+    color: green;
+    padding: 10px;
+    width: 50px;
+    border: 2px solid green;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+}
+.addNew-btn:hover{
+    background-color: green;
+    color: white;
+    border: 2px solid green;
+    transition: .3s ease-in-out;
+}
+.userData{
+    display: flex;
+    justify-content: space-between;
+}
+.img{
+    border-radius: 50%;
+    border: 1px solid gray;
+}
+.online{
+    height: 30px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.status{
+    height: 10px;
+    width: 10px;
+    border-radius: 50%;
+    animation: blink infinite ease-in-out 1s;
+}
+.delete-btn{
+    color: red;
+    padding: 10px;
+    width: 10%;
+    border: 2px solid red;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size:15px;
+}
+.delete-btn:hover{
+    background-color: red;
+    color: white;
+    border: 2px solid red;
+    transition: .3s ease-in-out;
+      cursor: pointer;
+}
+.edit-btn{
+    text-align: center;
+    color: blue;
+    padding: 10px;
+    width: 10%;
+    border: 2px solid blue;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+    background-color: rgba(128, 128, 128, 0.185);
+    font-size: 15px;
+}
+.edit-btn:hover{
+     background-color:blue; 
+    color: white;
+    border: 2px solid blue;
+    transition: .3s ease-in-out;
+  
+}
+.parent{
+    padding: 10px;
+    border: 2px solid;
+    border-radius: 5px;
+    list-style-type: none;
+}
+.child{
+    background-color: rgba(128, 128, 128, 0.148);
+    padding: 10px;
+    height: 30%;
+    margin-bottom: 20px;
+    border-radius: 5px;
+}
+.child *{
+    margin-bottom: 10px;
+}
+.btns{
+    display: flex;
+    gap: 20px;
+    width: 100%;
+}
+.name{
+    font-size: 40px;
+}
+svg{
+    display :none;
+}
+
+@keyframes blink {
+    0%{
+        opacity: 0;
+    }
+    50%{
+        opacity: 1;
+    }
+    100%{
+        opacity: 0;
+    }
+}

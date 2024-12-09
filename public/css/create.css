@@ -1,0 +1,52 @@
+.body{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+.container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.form{
+    width: 30%;
+    display: flex;
+    padding: 10px;
+    flex-wrap: wrap;
+    flex-direction: column;
+    background-color: rgba(128, 128, 128, 0.123);
+    border: 1px solid black;
+    border-radius: 8px;
+}
+form *{
+    padding: 10px;
+    margin-bottom: 10px;
+}
+.error{
+    color: red;
+}
+.sub-btn{
+    background-color: white;
+    color: black;
+    border: 1px solid black;
+    outline: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+.sub-btn:hover{
+    background-color: rgba(128, 128, 128, 0.021);
+}
+
+.upd-btn{
+    background-color: white;
+    color: black;
+    border: 1px solid black;
+    outline: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+.upd-btn:hover{
+    background-color: rgba(128, 128, 128, 0.021);
+}
