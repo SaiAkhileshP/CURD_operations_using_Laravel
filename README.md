@@ -1,66 +1,124 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# CRUD Application with Laravel, Frontend Validation, and AJAX  
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+### 1. Set Up the Laravel Project  
+- Clone the Laravel project repository or create a new Laravel project:  
+  ```bash
+  laravel new project_name
+  ```  
+- Configure the `.env` file with appropriate database credentials.  
+- Install dependencies:  
+  ```bash
+  composer install
+  ```
 
-## About Laravel
+### 2. Create a Migration  
+- Generate a migration file:  
+  ```bash
+  php artisan make:migration create_sample_table
+  ```  
+- Define the following fields in the migration file:  
+  - **Integer**: `id`, `age`  
+  - **String**: `name`, `email`  
+  - **Text**: `description`  
+  - **Boolean**: `is_active`  
+  - **Date and Time**: `created_at`, `updated_at`  
+  - **Enum or Set**: `gender`, `role`  
+  - **File Upload**: `profile_picture`  
+  - **Checkbox**: `preferences`  
+  - **Radio Button Options**: `status`  
+  - **Foreign Key**: `user_id` referencing another table.
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+### 3. Run Migrations  
+- Execute the migration:  
+  ```bash
+  php artisan migrate
+  ```
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+### 4. Set Up a Model  
+- Create a model for the table:  
+  ```bash
+  php artisan make:model Sample
+  ```  
+- Add the `$fillable` property for mass assignment.
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+### 5. Create a Controller  
+- Generate a controller:  
+  ```bash
+  php artisan make:controller SampleController
+  ```  
+- Implement CRUD operations:  
+  - **Create**: Form to add data and handle submission.  
+  - **Read**: List all records with pagination.  
+  - **Update**: Edit form and update data.  
+  - **Delete**: Remove a record using AJAX.
 
-## Learning Laravel
+### 6. Set Up Routes  
+- Define routes for CRUD operations in `routes/web.php`.
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+### 7. Create Views (Frontend)  
+- Use Blade templates to build pages for:  
+  - Adding new records.  
+  - Editing records.  
+  - Viewing all records.  
+  - Viewing individual record details.
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+### 8. Add jQuery Validation  
+- Include jQuery in the project.  
+- Add validation rules for:  
+  - Required fields.  
+  - Email format.  
+  - File size and type.  
+  - Custom messages.
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+### 9. Implement AJAX for Deletion  
+- Use jQuery AJAX for record deletion without page reload.  
+- Update the view dynamically to reflect changes.  
+- Add a confirmation dialog for deletions.
 
-## Laravel Sponsors
+### 10. Handle File Uploads  
+- Configure Laravel file storage (e.g., public or S3).  
+- Add file upload logic in the controller for the `profile_picture` field.  
+- Ensure uploaded files are accessible via URLs.
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+### 11. Test the Application  
+- Verify CRUD functionalities.  
+- Validate forms on both backend and frontend.  
+- Test AJAX deletion and file uploads.
 
-### Premium Partners
+### 12. Git Workflow and Pull Request Submission  
+- Initialize a Git repository:  
+  ```bash
+  git init
+  ```  
+- Link the local repository to a remote repository on GitHub or other platforms.  
+- Add and commit changes with meaningful messages:  
+  ```bash
+  git add .
+  git commit -m "Initial commit"
+  ```  
+- Push changes to the remote repository:  
+  ```bash
+  git push origin main
+  ```
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[WebReinvent](https://webreinvent.com/)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Jump24](https://jump24.co.uk)**
-- **[Redberry](https://redberry.international/laravel/)**
-- **[Active Logic](https://activelogic.com)**
-- **[byte5](https://byte5.de)**
-- **[OP.GG](https://op.gg)**
+---
+## Result
 
-## Contributing
+# Create a record : 
+![image](https://github.com/user-attachments/assets/dfa872dc-88a4-4b38-8886-273c5df26cd3)
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+# Home page/ Read : 
+![image](https://github.com/user-attachments/assets/f8186c4e-a626-415d-802a-b39b84accff2)
 
-## Code of Conduct
+# Update a record : 
+![image](https://github.com/user-attachments/assets/26d295c1-b2c2-476f-8696-dcb265da85f4)
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+# Delete a record : 
+![image](https://github.com/user-attachments/assets/bfd70174-e0d5-43ec-a513-f47f6d03b9f6)
+![image](https://github.com/user-attachments/assets/609c494f-746c-4e6a-ba67-aad790da69f7)
 
-## Security Vulnerabilities
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
 
-## License
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+
+
